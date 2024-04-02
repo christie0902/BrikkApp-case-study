@@ -19,20 +19,24 @@ const PropertyCard = ({ property }) => {
         />
         <div className="card__content">
           <h3 className="card__title">{property.name_extracted}</h3>
-          <p className="card__locality">{property.locality}</p>
-          <p className="card__price">{formatPrice(property.prize_czk)}</p>
-          <p className="card__size">
-            Building: {property.building_area} m² / Land: {property.land_area} m²
-          </p>
-          <div className="card__labels">
-            {property.labels &&
-              Object.entries(property.labels).map(([key, value]) => (
-                <span key={key} className="card__label">
-                  {value}
-                </span>
-              ))}
+          <div className="card__table">
+            <div className="card__row">
+              <span className="card__cell card__cell--title">Price</span>
+              <span className="card__cell card__cell--content">{formatPrice(property.prize_czk)}</span>
+            </div>
+            <div className="card__row">
+              <span className="card__cell card__cell--title">Locality</span>
+              <span className="card__cell card__cell--content">{property.locality}</span>
+            </div>
+            <div className="card__row">
+              <span className="card__cell card__cell--title">Floor area</span>
+              <span className="card__cell card__cell--content">{property.building_area} m²</span>
+            </div>
+            <div className="card__row">
+              <span className="card__cell card__cell--title">Land area</span>
+              <span className="card__cell card__cell--content">{property.land_area} m²</span>
+            </div>
           </div>
-        </div>
         <div className="card__company">
           <img
             src={property.company_logo}
@@ -41,6 +45,7 @@ const PropertyCard = ({ property }) => {
           />
         </div>
       </div>
+    </div>
     </div>
   );
 };

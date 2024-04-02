@@ -1,11 +1,12 @@
 import React from 'react';
 import PropertyCard from './PropertyCard';
+import '../css/Comparison.scss';
 
 const PropertyComparison = ({ propertyA, propertyB }) => {
     const canCompare = propertyA && propertyB;
 
     return (
-        <div>
+        <div className="comparison-container">
           {canCompare ? (
             <>
               <PropertyCard property={propertyA} />
