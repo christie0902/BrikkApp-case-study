@@ -8,7 +8,7 @@
   
   .card {
     width: 400px;
-    min-height: 600px;
+    min-height: 630px;
     border: 1px solid #ccc;
     border-radius: 4px;
     overflow: hidden;
@@ -67,6 +67,15 @@
         margin: 0.5rem 0;
         background-color: #f9f9f9;
         padding: 0.25rem 0.5rem;
+        height: 30px;
+
+        &.higher {
+          background-color: rgb(54, 207, 54);
+        }
+      
+        &.lower {
+          background-color: rgb(221, 83, 83);
+        }
       }
     
       &__cell {
