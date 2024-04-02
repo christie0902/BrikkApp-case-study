@@ -9,6 +9,7 @@
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         border-radius: 4px;
         overflow: hidden;
+        position: relative;
         cursor: pointer;
 
         .property-image {
@@ -36,4 +37,33 @@
             }
         }
     }
+
+    .selection-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%; 
+        background-color: rgb(7, 100, 42); 
+        color: white; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      
+      .selected-A,
+      .selected-B {
+        border: 3px solid; 
+      }
+      
+      .selected-A {
+        border-color: blue;
+      
+      .selected-B {
+        border-color: green;
+      }
+    }   
 }

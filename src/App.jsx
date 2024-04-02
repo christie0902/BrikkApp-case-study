@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div>
-            <PropertyList onSelectProperty={handleSelectProperty} />
+            <PropertyList onSelectProperty={handleSelectProperty} selectedProperties={selectedProperties}/>
             {selectedProperties.length === 2 && (
                 <PropertyComparison propertyA={selectedProperties[0]} propertyB={selectedProperties[1]} />
             )}

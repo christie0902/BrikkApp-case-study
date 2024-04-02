@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchProperties } from '../services/ApiService';
 import '../css/PropertyList.scss';
 
-const PropertyList = ({ onSelectProperty }) => {
+const PropertyList = ({ onSelectProperty, selectedProperties }) => {
     const [properties, setProperties] = useState([]);
     
   
@@ -21,12 +21,19 @@ const PropertyList = ({ onSelectProperty }) => {
 
     return (
         <div className="property-list">
-            {properties.map(property => (
+            {properties.map(property => {
+                const isSelectedA = selectedProperties[0] && selectedProperties[0].id === property.id;
+                const isSelectedB = selectedProperties[1] && selectedProperties[1].id === property.id;
+                const selectionClass = isSelectedA ? 'selected-A' : isSelectedB ? 'selected-B' : '';
+        
+                return (
                 <div 
                     key={property.id} 
-                    className="property-card"
+                    className={`property-card ${selectionClass}`}
                     onClick={() => handlePropertyClick(property)}
                 >
+                    {isSelectedA && <span className="selection-badge">A</span>}
+                    {isSelectedB && <span className="selection-badge">B</span>}
                     <img src={property.images[0]} alt={property.name_extracted} className="property-image" />
                     <div className="property-info">
                         <div className="property-details">
@@ -35,7 +42,8 @@ const PropertyList = ({ onSelectProperty }) => {
                         </div>
                     </div>
                 </div>
-            ))}
+                 );
+                })}
         </div>
     );
   };
