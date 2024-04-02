@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropertyList from "./components/PropertyList";
 import PropertyComparison from "./components/PropertyComparison";
+import './App.scss';
 
 function App() {
   const [selectedProperties, setSelectedProperties] = useState([]);
@@ -23,7 +24,12 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app-container">
+      <div className="top-black-border"></div>
+      <header className="app-header">
+        <h1>Estate Comparison</h1>
+        <hr />
+      </header>
       <PropertyList
         onSelectProperty={handleSelectProperty}
         selectedProperties={selectedProperties}
@@ -34,6 +40,7 @@ function App() {
           propertyB={selectedProperties[1]}
         />
       )}
+      <div className="bottom-black-border"></div>
     </div>
   );
 }

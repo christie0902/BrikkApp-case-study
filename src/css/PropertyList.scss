@@ -66,4 +66,38 @@
         border-color: green;
       }
     }   
+
+    @media (max-width: 768px) {
+        .property-card {
+          width: 200px;
+          margin: 0.5rem;
+          
+          .property-image {
+            height: 120px;
+          }
+    
+          .property-info {
+            padding: 0.25rem;
+    
+            .property-details {
+              .property-title {
+                font-size: 0.85rem;
+              }
+    
+              .property-locality {
+                font-size: 0.75rem;
+              }
+            }
+          }
+        }
+    
+        .selection-badge {
+          top: 5px;
+          left: 5px;
+          width: 2rem;
+          height: 2rem;
+          font-size: 1rem;
+        }
+      }
 }
+
