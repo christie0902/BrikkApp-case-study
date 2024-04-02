@@ -1,10 +1,17 @@
-html {
-    box-sizing: border-box;
+html, body {
     margin: 0;
     padding: 0;
-    overflow-y: hidden;
-}
+    box-sizing: border-box;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+  
 .app-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 100vh;
     background-color: #f5f5f5; 
     font-family: 'Arial', sans-serif;
@@ -36,6 +43,9 @@ html {
 }
 
 @media (max-width: 768px) {
+    .app-container {
+        height: auto;
+    }
     .app-header {
       hr {
         width: 80%;
